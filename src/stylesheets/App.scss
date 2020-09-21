@@ -1,0 +1,89 @@
+body {
+  font: 14px "Century Gothic", Futura, sans-serif;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+  background-color: lightgrey;
+
+  #root {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .background-board {
+      background-color: gray;
+      padding: 5rem;
+    }
+  }
+}
+
+ol,
+ul {
+  padding-left: 30px;
+}
+
+.board-row:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.status {
+  margin-bottom: 10px;
+  font-size: 1.4rem;
+  text-align: center;
+  width: 100%;
+  color: white;
+}
+
+.square {
+  background: #fff;
+  border: 1px solid #999;
+  float: left;
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 34px;
+  height: 60px;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+  text-align: center;
+  width: 60px;
+
+  &:hover {
+    border: 2px solid black;
+    z-index: 999;
+  }
+}
+
+.square:focus {
+  outline: none;
+}
+
+.restart {
+  margin-top: 1rem;
+  width: 100%;
+  height: 40px;
+  font-size: 1.2rem;
+  transition-duration: 0.4s;
+  border: 2px solid #008cba;
+  padding: 5px;
+
+  &:hover {
+    background-color: #008cba;
+    color: white;
+  }
+}
+
+.restart-blank {
+  width: 100%;
+  height: 40px;
+  padding: 5px;
+}
+
+.headerStyle{
+  text-align: center;
+  text-transform: uppercase;
+}
