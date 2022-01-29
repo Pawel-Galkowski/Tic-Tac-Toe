@@ -1,7 +1,7 @@
-import React from "react";
-import TicTacToe from "./components/TicTacToe";
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import "./stylesheets/App.css";
+import React from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import TicTacToe from './components/TicTacToe';
+import './stylesheets/App.css';
 
 function App() {
   return (

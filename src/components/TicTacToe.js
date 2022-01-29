@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import { Square } from "./Square";
-import { Winner } from "./Winner";
+import React, { useState } from 'react';
+import Square from './Square';
+import Winner from './Winner';
 
-const TicTacToe = () => {
+function TicTacToe() {
   const [boardSquares, setBoardSquares] = useState(Array(9).fill(null));
   const [nextX, setNextX] = useState(true);
 
@@ -11,16 +11,14 @@ const TicTacToe = () => {
 
     if (Winner(boardSquares) || squares[index]) return;
 
-    squares[index] = nextX ? "X" : "O";
+    squares[index] = nextX ? 'X' : 'O';
     setBoardSquares(squares);
     setNextX(!nextX);
   };
 
-  const renderSquare = (index) => {
-    return (
-      <Square value={boardSquares[index]} onClick={() => handleClick(index)} />
-    );
-  };
+  const renderSquare = (index) => (
+    <Square value={boardSquares[index]} onClick={() => handleClick(index)} />
+  );
 
   const restartGame = () => {
     setBoardSquares(Array(9).fill(null));
@@ -29,12 +27,11 @@ const TicTacToe = () => {
 
   const winnerStatus = () => {
     if (winner) return `Winner is: ${winner}`;
-    else if (!boardSquares.includes(null)) return `Draw`;
-    else return `Next Player is: ${nextX ? "X" : "O"}`;
+    if (!boardSquares.includes(null)) return 'Draw';
+    return `Next Player is: ${nextX ? 'X' : 'O'}`;
   };
 
-  let status;
-  status = winnerStatus();
+  const status = winnerStatus();
 
   return (
     <div className="background-board">
@@ -55,14 +52,14 @@ const TicTacToe = () => {
         {renderSquare(8)}
       </div>
       {winner || !boardSquares.includes(null) ? (
-        <button className="restart" onClick={restartGame}>
+        <button className="restart" type="button" onClick={restartGame}>
           Restart
         </button>
       ) : (
-        <div className="restart-blank"></div>
+        <div className="restart-blank" />
       )}
     </div>
   );
-};
+}
 
 export default TicTacToe;
